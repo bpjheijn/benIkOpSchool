@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Todo</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+
+<body ng-app="location" ng-controller="main">
+<ion-pane>
+    <ion-header-bar class="bar-dark">
+        <h1 class="title">Am I at school?</h1>
+    </ion-header-bar>
+    <ion-content>
+        <h3>Long: {{long}}</h3>
+        <h3>Lat: {{lat}}</h3>
+
+        <div ng-show="onSchool()">
+            <h4>Je bent op school!</h4>
+        </div>
+        <div ng-hide="onSchool()">
+            <h4>Je bent niet op school, waar ben je?!</h4>
+        </div>
+        <div ng-show="atHome()">
+            <h4>Je bent thuis! Eindelijk!!!</h4>
+        </div>
+        <div ng-hide="atHome()">
+            <h4>Je bent niet thuis. Snel naar huis, het is bijna weekend!</h4>
+        </div>
+
+    </ion-content>
+</ion-pane>
+</body>
+</html>
