@@ -5,6 +5,7 @@ app.controller('main', function ($scope, $ionicModal, localStorageService, $cord
     var homeLat = 51.709241;
     var homeLong = 5.309220;
 
+alert(window.location.href);
 
     var posOptions = {timeout: 30000, maximumAge: 2000, enableHighAccuracy: true};
     $cordovaGeolocation
